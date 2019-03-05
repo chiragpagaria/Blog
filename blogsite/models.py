@@ -16,7 +16,7 @@ class Post(models.Model):
 
 class Comments(models.Model):
     post = models.ForeignKey(Post, on_delete="")
-    author = models.CharField()
+    author = models.CharField(max_length=100)
     text = models.TextField()
     create_date = models.DateTimeField()
     approve_date = models.DateTimeField()
