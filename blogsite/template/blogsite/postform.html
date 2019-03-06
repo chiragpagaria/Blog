@@ -1,0 +1,21 @@
+{% extends 'blogsite/base.html' %}
+
+{% block tittle %} Postform {% endblock %}
+{% block body %}
+<h1 align="Center">
+    Welcome
+</h1>
+<form method="post">
+    {% csrf_token %}
+    Tittle: <input type="text" name="tittle">
+    <br><br>
+
+    Text:  <textarea name="text" cols="50" rows="10"></textarea>
+    <br><br>
+
+    Date: <input type="date" name="create_date">
+    <br><br>
+
+    <input type="submit" name="submit">
+</form>
+{% endblock %}
