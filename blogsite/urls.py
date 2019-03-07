@@ -13,13 +13,14 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-
+from django.conf.urls import url
 from django.urls import path
-
 from blogsite.views import Index, PostFormClass
 
+app_name = 'blogsite'
+
 urlpatterns = [
-    path('', Index.as_view(), name="index"),
-    path('postform/', PostFormClass.as_view(), name="postform"),
-    # path(r'submit/postform', PostFormClass.as_view(), name="post_form_submit")
+    url(r'$', Index.as_view(), name="index"),
+    url(r'postform/', PostFormClass.as_view(), name="postform"),
+    url(r'submit/postform', PostFormClass.as_view(), name="post_form_submit")
 ]
