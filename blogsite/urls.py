@@ -14,13 +14,13 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.conf.urls import url
-from django.urls import path
+
 from blogsite.views import Index, PostFormClass
 
 app_name = 'blogsite'
 
 urlpatterns = [
     url(r'$', Index.as_view(), name="index"),
-    url(r'postform/', PostFormClass.as_view(), name="postform"),
+    url(r'postform/$', PostFormClass.as_view(), name="postform"),
     url(r'submit/postform', PostFormClass.as_view(), name="post_form_submit")
 ]
